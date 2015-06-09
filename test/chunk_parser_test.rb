@@ -3,6 +3,9 @@ SimpleCov.start
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/chunk_parser'
+require './lib/paragraph_parser'
+require './lib/header_parser'
+
 
 class TestChunkParser < Minitest::Test
   TEXT = <<-EOS
@@ -23,11 +26,13 @@ This is a paragraph.
 
   def test_it_sorts_headers_into_the_correct_section
     parser = ChunkParser.new(TEXT)
-    assert_equal "header", parser.sort
+    header_parser = HeaderParser.new
+    assert_equal header_parser.convert(TEXT), parser.sort
   end
 
   def test_it_sorts_paragraphs_into_the_correct_second
     parser = ChunkParser.new(PARA)
-    assert_equal "paragraph", parser.sort
+    paragraph_parser = ParagraphParser.new
+    assert_equal paragraph_parser.convert(PARA), parser.sort
   end
 end

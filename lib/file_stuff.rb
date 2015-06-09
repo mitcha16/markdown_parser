@@ -2,7 +2,7 @@ class FileManipulation
 
   def read(input)
     file = File.open(input, "r")
-   message = ""
+    message = ""
     while (line = file.gets)
       message += line
     end
@@ -12,9 +12,9 @@ class FileManipulation
 
   end
 
-  def write(input, file)
+  def write(file, input)
     file = File.open(file, "a")
-    file << input
+    file << "#{input}\n"
   end
 
 end

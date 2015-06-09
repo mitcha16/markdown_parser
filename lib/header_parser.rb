@@ -2,7 +2,8 @@ class HeaderParser
 
   def convert(chunk)
     count_of_hashes = count_and_remove(chunk)
-    trim_hashes!(chunk, count_of_hashes)
+    chunk = trim_hashes!(chunk, count_of_hashes)
+    add_correct_tag!(chunk, count_of_hashes)
   end
 
 
@@ -16,6 +17,10 @@ class HeaderParser
 
   def trim_hashes!(chunk, count)
     chunk = chunk[count..chunk.length]
+  end
+
+  def add_correct_tag!(chunk, count)
+    chunk = "<h#{count}>#{chunk}</h#{count}>"
   end
 
 

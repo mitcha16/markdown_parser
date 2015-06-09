@@ -12,7 +12,9 @@ class ChiselRunner
     text = file_machine.read(input)
     chunks = Chunkifier.new(text).chunks
     chunks.each do |chunk|
-
+      parser = ChunkParser.new(chunk)
+      formatted_text = parser.sort
+      file_machine.write(output, formatted_text)
     end
 
   end

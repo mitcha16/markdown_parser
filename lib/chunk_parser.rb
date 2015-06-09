@@ -13,11 +13,11 @@ class ChunkParser
   def sort
     first = get_first_element
     if first == "#"
-      @header_parser.convert(chunk)
-      return "header"
+      return @header_parser.convert(chunk)
+
     else
-      @paragraph_parser.convert(chunk)
-      return "paragraph"
+      return @paragraph_parser.convert(chunk)
+
     end
   end
 
