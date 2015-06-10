@@ -1,11 +1,9 @@
-require 'simplecov'
-SimpleCov.start
-
 require './lib/chunk_parser'
 require './lib/file_stuff'
 require './lib/chunkifier'
 require './lib/chunk_parser'
-require './lib.emphasiser'
+require './lib/emphasis'
+
 
 class ChiselRunner
 
@@ -19,17 +17,30 @@ class ChiselRunner
     print "Converted #{input} (#{text.count("\n")} lines) to #{output} (#{file_machine.read(output).count("\n")})\n\n"
     #look into why output count is not working
   end
-  def format(chunks, file_machine, output)
-    emphasiser = Emphasiser.new
-    chunks.each do |chunk|
-      parser = ChunkParser.new(chunk)
-      converted_chunks = parser.sort
-      formatted_text = emphasiser.convert(converted_chunks)
-      file_machine.write(output, formatted_text)
+end
+
+def format(chunks, file_machine, output)
+  emphasiser = Emphasiser.new
+  parser = ChunkParser.new
+  chunks.each do |chunk|
+    formatted = parser.cycle(chunk)
+    if formatted != nil
+      finished = emphasiser.convert(formatted)
+      file_machine.write(output, finished)
     end
   end
+
+
 end
+
 
 if __FILE__ == $0
   ChiselRunner.new.run
 end
+
+
+
+#fix your lists
+#everything is working except for when they are at the end
+#it is because the each loop is running out before they can finish
+#possibly just make a check for list method inside parser

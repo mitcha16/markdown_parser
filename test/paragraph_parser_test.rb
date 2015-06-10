@@ -12,7 +12,8 @@ class ParagraphParserTest < Minitest::Test
 
     def test_it_will_format_a_sentence
       parser = ParagraphParser.new
-      assert_equal "<p>\nHello, this is a longer test\n</p>", parser.convert("Hello, this is a longer test")
+      assert_equal "<p>\nHello, this is a longer test\n</p>",
+      parser.convert("Hello, this is a longer test")
     end
 
     def test_it_will_format_a_paragraph
