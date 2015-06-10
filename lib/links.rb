@@ -10,11 +10,14 @@ class Linker
   end
 
   def linkify(chunk)
+
     if has_both_signs?(chunk)
-      open = chunk.index("[") + 1
-      close = chunk.index(")") - 1
-      formatted = format(chunk)
-      return formatted[0..open] + formatted[close..-1]
+      open = chunk.index("[")
+      close = chunk.index(")")
+      link = chunk[open..close]
+      formatted = format(link)
+      chunk = chunk[0..open-1] + formatted +  chunk[close+1..-1]
+      linkify(chunk)
     else
       return chunk
     end
@@ -23,9 +26,9 @@ class Linker
 
   def format(link)
     if get_third(link) != nil
-      return "#{link}<a href=\"#{get_second(link)}\" title=#{get_third(link)}>#{get_first(link)}</a>"
+      return "<a href=\"#{get_second(link)}\" title=#{get_third(link)}>#{get_first(link)}</a>"
     else
-      return "#{link}<a href=\"#{get_second(link)}\">#{get_first(link)}</a>"
+      return "<a href=\"#{get_second(link)}\">#{get_first(link)}</a>"
     end
 
   end

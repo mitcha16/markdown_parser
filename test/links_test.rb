@@ -55,4 +55,16 @@ class LinksTest <Minitest::Test
     linker.linkify("This is an example of a sentence with a [an example](http://example.com/)")
   end
 
+  def test_it_will_leave_a_chunk_alone_if_it_has_no_link
+    linker = Linker.new
+    assert_equal "This is an example of a sentence with out a link",
+    linker.linkify("This is an example of a sentence with out a link")
+  end
+
+  def test_it_will_process_multiple_links
+    linker = Linker.new
+    assert_equal "This is an example of a sentence with a <a href=\"http://example.com/\">an example</a> This is an example of a sentence with a <a href=\"http://example.com/\">an example</a>",
+    linker.linkify("This is an example of a sentence with a [an example](http://example.com/) This is an example of a sentence with a [an example](http://example.com/)")
+  end
+
 end
