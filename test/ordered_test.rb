@@ -8,7 +8,7 @@ class OrderedParserTest < Minitest::Test
   def test_it_formats_each_element_of_the_list_with_the_correct_tag
 
     parser = OrderedParser.new
-    assert_equal ["<li>hello</li>\n", "<li>goodbye</li>\n"], parser.format(["hello", "goodbye"])
+    assert_equal ["\t<li>hello</li>\n", "\t<li>goodbye</li>\n"], parser.format(["hello", "goodbye"])
   end
 
   def test_it_wraps_entire_list_with_ul
@@ -26,7 +26,7 @@ class OrderedParserTest < Minitest::Test
   def test_it_formats_everything_together_correctly
 
     parser = OrderedParser.new
-    assert_equal "<ol>\n<li> hello</li>\n<li> goodbye</li>\n</ol>",
+    assert_equal "<ol>\n\t<li> hello</li>\n\t<li> goodbye</li>\n</ol>",
     parser.convert(["1. hello", "23. goodbye"])
   end
 

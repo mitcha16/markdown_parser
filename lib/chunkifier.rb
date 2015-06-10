@@ -6,6 +6,6 @@ class Chunkifier
   end
 
   def chunks
-    text.split("\n\n")
+    split_array = text.split("\n\n")
   end
 end

@@ -15,7 +15,7 @@ class UnorderedParser
 
   def format(chunks)
     return chunks.map do |chunk|
-      chunk = "<li>#{chunk}</li>\n"
+      chunk = "\t<li>#{chunk}</li>\n"
     end
   end
 

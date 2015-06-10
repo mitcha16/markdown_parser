@@ -1,29 +1,29 @@
-1. list_ordered
+# My Life in Desserts
 
-*list
+## Chapter 1: The Beginning
 
-*list2
+My favorite cuisines are:
 
-This is a test file.
+1. Sushi
+2. Barbeque
+3. Mexican
 
-This is the second line.
 
-#This is a **header**
+"You just *have* to try the cheesecake," he said. "Ever since it appeared in
+**Food & Wine** this place has been packed every night."
 
-###here is a *nother* one!
+This is the first line of the first paragraph.
 
-##here is a list
+This is the first line of the second paragraph.
 
-*item1
+My favorite cuisines are:
 
-*item2
+* Sushi
+* Barbeque
+* Mexican
 
-*item3
+My favorite cuisines are:
 
-#everything works
-
-1. ordered1
-
-2. ordered2
-
-#except some gets cut off
+1. Sushi
+2. Barbeque
+3. Mexican

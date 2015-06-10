@@ -11,7 +11,7 @@ class UnorderedParserTest < Minitest::Test
 
   def test_it_formats_each_element_of_the_list_with_the_correct_tag
     parser = UnorderedParser.new
-    assert_equal ["<li>hello</li>\n", "<li>goodbye</li>\n"], parser.format(["hello", "goodbye"])
+    assert_equal ["\t<li>hello</li>\n", "\t<li>goodbye</li>\n"], parser.format(["hello", "goodbye"])
   end
 
   def test_it_wraps_entire_list_with_ul
@@ -22,7 +22,7 @@ class UnorderedParserTest < Minitest::Test
 
   def test_it_formats_everything_together_correctly
     parser = UnorderedParser.new
-    assert_equal "<ul>\n<li>hello</li>\n<li>goodbye</li>\n</ul>",
+    assert_equal "<ul>\n\t<li>hello</li>\n\t<li>goodbye</li>\n</ul>",
     parser.convert(["*hello", "*goodbye"])
   end
 
