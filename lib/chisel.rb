@@ -17,16 +17,24 @@ class ChiselRunner
     print "Converted #{input} (#{text.count("\n")} lines) to #{output} (#{file_machine.read(output).count("\n")})\n\n"
     #look into why output count is not working
   end
-end
 
-def format(chunks, file_machine, output)
-  emphasiser = Emphasiser.new
-  parser = ChunkParser.new
-  chunks.each do |chunk|
-    formatted = parser.cycle(chunk)
-    if formatted != nil
+
+  def format(chunks, file_machine, output)
+    emphasiser = Emphasiser.new
+    parser = ChunkParser.new
+    chunks.each do |chunk|
+      list = parser.check_for_list(chunk)
+      if list != true && list != nil
+        finished = emphasiser.convert(list)
+        file_machine.write(output, finished)
+      elsif list == true
+        chunk = nil
+      end
+      if chunk != nil
+      formatted = parser.sort(chunk)
       finished = emphasiser.convert(formatted)
       file_machine.write(output, finished)
+    end
     end
   end
 
@@ -41,6 +49,4 @@ end
 
 
 #fix your lists
-#everything is working except for when they are at the end
-#it is because the each loop is running out before they can finish
-#possibly just make a check for list method inside parser
+#everything is working except they are not replacing current

@@ -13,20 +13,7 @@ class ChunkParser
   end
 
 
-  def cycle(chunk)
-    first = get_first_element(chunk)
-    if first == "*"
-      @lists << chunk
-      return
-    elsif @lists.any? && first != "*"
-      finished_list =  @unordered_list_parser.convert(@lists)
-      @lists.clear
-      return finished_list
-    else
-      sort(chunk)
-    end
 
-  end
 
   def sort(chunk)
     first = get_first_element(chunk)
@@ -39,5 +26,18 @@ class ChunkParser
 
   def get_first_element(chunk)
     return chunk[0]
+  end
+
+  def check_for_list(chunk)
+    first = get_first_element(chunk)
+    if first == "*"
+      @lists << chunk
+      return true
+    elsif @lists.any? && first != "*"
+      finished_list =  @unordered_list_parser.convert(@lists)
+      @lists.clear
+      return finished_list
+    end
+
   end
 end
