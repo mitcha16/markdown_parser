@@ -14,7 +14,7 @@ class ChunkParser
     first = get_first_element
     if first == "#"
       return @header_parser.convert(chunk)
-
+#add elsif for lists
     else
       return @paragraph_parser.convert(chunk)
 

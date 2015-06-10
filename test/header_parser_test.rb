@@ -31,8 +31,8 @@ class HeaderParserTest < Minitest::Test
 
   def test_it_returns_the_correctly_formatted_text
     head_parser = HeaderParser.new
-    assert_equal "This is a header\n", head_parser.convert(TEXT)
+    assert_equal "<h2>This is a header\n</h2>", head_parser.convert(TEXT)
   end
-  
+
 
 end
