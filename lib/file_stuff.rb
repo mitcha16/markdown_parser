@@ -7,7 +7,6 @@ class FileManipulation
       message += line
     end
     file.close
-
     return message
 
   end

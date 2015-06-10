@@ -1,3 +1,5 @@
+1. list_ordered
+
 *list
 
 *list2
@@ -19,5 +21,9 @@ This is the second line.
 *item3
 
 #everything works
+
+1. ordered1
+
+2. ordered2
 
 #except some gets cut off
