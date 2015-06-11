@@ -5,10 +5,8 @@ class Emphasiser
   end
 
   def convert(text)
-    if text != nil
       replaced = replace_double_astericks!(text)
       return replace_single_astericks!(replaced)
-    end
   end
 
   def replace_single_astericks!(text)

@@ -24,8 +24,3 @@ end
 if __FILE__ == $0
   ChiselRunner.new.run
 end
-
-
-
-#fix your lists
-#everything is working except they are not replacing current

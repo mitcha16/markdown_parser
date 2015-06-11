@@ -8,7 +8,7 @@ My favorite cuisines are:
 2. Barbeque
 3. Mexican
 
-"You just *have* to try the cheesecake," he said. "Ever since it appeared in
+"You just *have* to try the cheesecake," he said. "Ever since *it appeared in
 **Food & Wine** this place has been packed every night."
 
 This is the first line of the first paragraph.
@@ -26,3 +26,6 @@ My favorite cuisines are:
 1. Sushi
 2. Barbeque
 3. Mexican
+
+This is an example of a sentence with a [an example](http://example.com/)
+This is an example of a sentence with a [an example](http://example.com/)
