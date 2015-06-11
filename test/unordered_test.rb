@@ -23,7 +23,7 @@ class UnorderedParserTest < Minitest::Test
   def test_it_formats_everything_together_correctly
     parser = UnorderedParser.new
     assert_equal "<ul>\n\t<li>hello</li>\n\t<li>goodbye</li>\n</ul>",
-    parser.convert(["*hello", "*goodbye"])
+    parser.convert("*hello\n*goodbye")
   end
 
 end

@@ -11,14 +11,16 @@ class ChunkParser
     @paragraph_parser = ParagraphParser.new
     @unordered_list_parser = UnorderedParser.new
     @ordered_list_parser = OrderedParser.new
-    @lists = []
-    @ordered_list = []
   end
 
   def sort(chunk)
     first = get_first_element(chunk)
     if first == "#"
       return @header_parser.convert(chunk)
+    elsif first == "*"
+      return @unordered_list_parser.convert(chunk)
+    elsif first.class == Fixnum
+      return @ordered_list_parser.convert(chunk)
     else
       return @paragraph_parser.convert(chunk)
     end
@@ -36,23 +38,4 @@ class ChunkParser
     return ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
   end
 
-  def check_for_list(chunk)
-    first = get_first_element(chunk)
-    if first == "*"
-      @lists << chunk
-      return true
-    elsif first.class == Fixnum
-      @ordered_list << chunk
-      return true
-    elsif @ordered_list.any? && first.class != Fixnum
-      finished_list =  @ordered_list_parser.convert(@ordered_list)
-      @ordered_list.clear
-      return finished_list
-    elsif @lists.any? && first != "*"
-      finished_list =  @unordered_list_parser.convert(@lists)
-      @lists.clear
-      return finished_list
-    end
-
-  end
 end

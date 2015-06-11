@@ -27,7 +27,7 @@ class OrderedParserTest < Minitest::Test
 
     parser = OrderedParser.new
     assert_equal "<ol>\n\t<li> hello</li>\n\t<li> goodbye</li>\n</ol>",
-    parser.convert(["1. hello", "23. goodbye"])
+    parser.convert("1. hello\n23. goodbye")
   end
 
 end

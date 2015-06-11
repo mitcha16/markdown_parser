@@ -1,6 +1,7 @@
 class OrderedParser
 
-  def convert(chunks)
+  def convert(input)
+    chunks = input.split("\n")
     stripped = remove_numbers(chunks)
     list = format(stripped)
     return wrap!(list).join

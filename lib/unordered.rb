@@ -1,6 +1,7 @@
 class UnorderedParser
 
-  def convert(chunks)
+  def convert(input)
+    chunks = input.split("\n")
     stripped = remove_asterick(chunks)
     list = format(stripped)
     return wrap!(list).join
