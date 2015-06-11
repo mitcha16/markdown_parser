@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-10T23:10:58-06:00">2015-06-10T23:10:58-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-06-11T09:00:06-06:00">2015-06-11T09:00:06-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">98.35%</span></span>
+    (<span class="covered_percent"><span class="green">98.31%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.01
+         1.9
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>17</b> files in total.
-    <b>303</b> relevant lines. 
-    <span class="green"><b>298</b> lines covered</span> and
+    <b>295</b> relevant lines. 
+    <span class="green"><b>290</b> lines covered</span> and
     <span class="red"><b>5</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -73,11 +73,11 @@
       <tr>
         <td class="strong"><a href="#3f9e4115dd1f943a36080af6c2139d807823114d" class="src_link" title="lib/emphasis.rb">lib/emphasis.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>41</td>
-        <td>22</td>
-        <td>22</td>
+        <td>26</td>
+        <td>14</td>
+        <td>14</td>
         <td>0</td>
-        <td>18.0</td>
+        <td>3.1</td>
       </tr>
       
       <tr>
@@ -607,8 +607,8 @@
     <h3>lib/emphasis.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>22</b> relevant lines. 
-      <span class="green"><b>22</b> lines covered</span> and
+      <b>14</b> relevant lines. 
+      <span class="green"><b>14</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -661,202 +661,112 @@
         <li class="covered" data-hits="4" data-linenumber="8">
           <span class="hits">4</span>
           
-          <code class="ruby">      replaced = replace_double_astericks!(text)</code>
+          <code class="ruby">      while text.include?(&quot;*&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="9">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="9">
+          <span class="hits">5</span>
           
-          <code class="ruby">      return replace_single_astericks!(replaced)</code>
+          <code class="ruby">        replace_double_astericks!(text)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="5" data-linenumber="10">
+          <span class="hits">5</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">        replace_single_astericks!(text)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="4" data-linenumber="12">
+          <span class="hits">4</span>
+          
+          <code class="ruby">      return text</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="15">
           <span class="hits">1</span>
           
           <code class="ruby">  def replace_single_astericks!(text)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="16">
+          <span class="hits">5</span>
           
-          <code class="ruby">    counter = 0</code>
+          <code class="ruby">    text.sub!(&quot;*&quot;, &quot;&lt;em&gt;&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="14">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="17">
+          <span class="hits">5</span>
           
-          <code class="ruby">    replaced = text.chars.map do |character|</code>
+          <code class="ruby">    text.sub!(&quot;*&quot;, &quot;&lt;/em&gt;&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="114" data-linenumber="15">
-          <span class="hits">114</span>
+        <li class="never" data-hits="" data-linenumber="18">
           
-          <code class="ruby">      if character == &quot;*&quot;</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="16">
-          <span class="hits">8</span>
-          
-          <code class="ruby">        counter +=   1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="covered" data-hits="114" data-linenumber="18">
-          <span class="hits">114</span>
-          
-          <code class="ruby">      if character == &quot;*&quot; &amp;&amp; counter.odd?</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="19">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        character = &quot;&lt;em&gt;&quot;</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">      elsif character == &quot;*&quot; &amp;&amp; counter.even?</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="21">
-          <span class="hits">4</span>
-          
-          <code class="ruby">        character = &quot;&lt;/em&gt;&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
-          <code class="ruby">      else</code>
-        </li>
-      
-        <li class="covered" data-hits="106" data-linenumber="23">
-          <span class="hits">106</span>
-          
-          <code class="ruby">        character = character</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="25">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="26">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    return replaced.join</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="27">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="28">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">  def replace_double_astericks!(text)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="31">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="22">
+          <span class="hits">5</span>
           
-          <code class="ruby">    array_of_text = text.split(&quot;**&quot;)</code>
+          <code class="ruby">    text.sub!(&quot;**&quot;, &quot;&lt;strong&gt;&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="32">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="23">
+          <span class="hits">5</span>
           
-          <code class="ruby">    array_of_text.size.times do |index|</code>
+          <code class="ruby">    text.sub!(&quot;**&quot;, &quot;&lt;/strong&gt;&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="7" data-linenumber="33">
-          <span class="hits">7</span>
-          
-          <code class="ruby">      if index.odd?</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="34">
-          <span class="hits">2</span>
-          
-          <code class="ruby">        array_of_text[index] = &quot;&lt;strong&gt;#{array_of_text[index]}&lt;/strong&gt;&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="35">
-          
-          
-          <code class="ruby">      end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="37">
-          <span class="hits">4</span>
-          
-          <code class="ruby">    return array_of_text.join</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="38">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="39">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="40">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">end</code>
