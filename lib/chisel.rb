@@ -13,7 +13,7 @@ class ChiselRunner
     text = file_machine.read(input)
     chunks = Chunkifier.new(text).chunks
     formatter.format(chunks, file_machine, output)
-    print "Converted #{input} (#{text.count("\n")} lines) to #{output} (#{file_machine.read(output).count("\n")})\n\n"
+    print "Converted #{input} (#{text.count("\n")} lines) to #{output} (#{file_machine.read(output).count("\n")} lines)\n\n"
   end
 
 

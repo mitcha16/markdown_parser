@@ -5,7 +5,6 @@ require './lib/ordered'
 
 class ChunkParser
 
-
   def initialize
     @header_parser = HeaderParser.new
     @paragraph_parser = ParagraphParser.new
