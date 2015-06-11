@@ -14,6 +14,7 @@ class FileManipulation
   def write(file, input)
     file = File.open(file, "a")
     file << "#{input}\n"
+    file.close
   end
 
 end

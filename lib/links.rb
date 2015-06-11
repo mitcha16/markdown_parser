@@ -10,12 +10,10 @@ class Linker
   end
 
   def linkify(chunk)
-
     if has_both_signs?(chunk)
       open = chunk.index("[")
       close = chunk.index(")")
-      link = chunk[open..close]
-      formatted = format(link)
+      formatted = format(chunk[open..close])
       chunk = chunk[0..open-1] + formatted +  chunk[close+1..-1]
       linkify(chunk)
     else

@@ -10,17 +10,15 @@ class Formatter
     parser = ChunkParser.new
     linker = Linker.new
     chunks.each do |chunk|
-      change_type(chunk, file_machine, output, emphasiser, parser, linker)
+      finished = change_type(chunk, output, emphasiser, parser, linker)
+      file_machine.write(output, finished)
     end
   end
 
-  def change_type(chunk, file_machine, output, emphasiser, parser, linker)
+  def change_type(chunk, output, emphasiser, parser, linker)
     formatted = parser.sort(chunk)
     emphasized = emphasiser.convert(formatted)
-    finished = linker.linkify(emphasized)
-    file_machine.write(output, finished)
+    return linker.linkify(emphasized)
   end
-
-
 
 end
